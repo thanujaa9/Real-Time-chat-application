@@ -95,9 +95,7 @@ chat-app/
 GET /api/messages
 ```
 
-**Query Params:**
 
-* `username` (optional)
 
 Returns all messages excluding those deleted for the specific user.
 
@@ -109,14 +107,6 @@ Returns all messages excluding those deleted for the specific user.
 POST /api/messages
 ```
 
-**Body:**
-
-```json id="l37tja"
-{
-  "username": "john",
-  "content": "Hello!"
-}
-```
 
 Creates a message and triggers real-time update.
 
@@ -128,12 +118,7 @@ Creates a message and triggers real-time update.
 DELETE /api/messages/:id
 ```
 
-**Query Params:**
 
-* `type` → `"everyone"` or `"me"`
-* `username` → required for personal deletion
-
----
 
 ### 📌 Pin / Unpin Message
 
@@ -218,16 +203,6 @@ npm run dev
 
 ---
 
-## 🧠 Learnings
-
-* Built scalable REST APIs using Express
-* Integrated MongoDB with schema design
-* Implemented real-time communication using Socket.io
-* Managed environment variables in production (Vercel + Render)
-* Handled edge cases like partial message deletion and filtering
-
----
-
 ## 📸 Demo
 
 👉 Try it here:
@@ -241,6 +216,3 @@ This project demonstrates strong understanding of **full-stack development, real
 
 ---
 
-## 📬 Contact
-
-Feel free to reach out for collaboration or feedback!
