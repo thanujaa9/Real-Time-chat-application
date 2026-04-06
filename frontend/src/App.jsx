@@ -7,41 +7,88 @@ export default function App() {
 
   if (!joined) {
     return (
-      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100vh', fontFamily: 'sans-serif' }}>
-        
-        <h2 style={{ marginBottom: '16px' }}>Welcome to Chat 💬</h2>
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: '100vh',
+        backgroundColor: '#1e1e24',
+        fontFamily: "'Segoe UI', sans-serif"
+      }}>
+        <div style={{
+          backgroundColor: '#2b2c35',
+          borderRadius: '20px',
+          width: '320px',
+          padding: '36px 28px',
+          textAlign: 'center',
+          border: '1px solid #3a3b45'
+        }}>
+          <div style={{
+            width: '52px', height: '52px', borderRadius: '14px',
+            backgroundColor: '#3d3d6b',
+            display: 'flex', alignItems: 'center', justifyContent: 'center',
+            fontSize: '22px', margin: '0 auto 16px'
+          }}>
+            💬
+          </div>
 
-        <input
-          style={{ padding: '10px', borderRadius: '6px', border: '1px solid #ccc', fontSize: '14px', width: '240px', marginBottom: '10px' }}
-          placeholder="Enter your username"
-          value={username}
-          onChange={e => setUsername(e.target.value)}
-          onKeyDown={e => e.key === 'Enter' && username.trim() && setJoined(true)}
-        />
+          <div style={{ fontWeight: '700', fontSize: '20px', color: '#f1f5f9', marginBottom: '6px' }}>
+            Welcome to Chat
+          </div>
+          <div style={{ fontSize: '13px', color: '#64748b', marginBottom: '24px' }}>
+            Pick a username to jump in
+          </div>
 
-        <button
-          style={{ padding: '10px 24px', borderRadius: '6px', border: 'none', backgroundColor: '#4f46e5', color: 'white', fontSize: '14px', cursor: 'pointer' }}
-          onClick={() => username.trim() && setJoined(true)}
-        >
-          Join Chat
-        </button>
+          <input
+            style={{
+              width: '100%',
+              padding: '11px 16px',
+              borderRadius: '10px',
+              border: '1.5px solid #3a3b45',
+              backgroundColor: '#1e1e24',
+              fontSize: '14px',
+              outline: 'none',
+              color: '#f1f5f9',
+              boxSizing: 'border-box',
+              marginBottom: '10px'
+            }}
+            placeholder="Your username..."
+            value={username}
+            onChange={e => setUsername(e.target.value)}
+            onKeyDown={e => e.key === 'Enter' && username.trim() && setJoined(true)}
+          />
 
-        {/* ✅ GitHub Link under button */}
-        <a
-          href="https://github.com/thanujaa9/Real-Time-chat-application"
-          target="_blank"
-          rel="noopener noreferrer"
-          style={{
-            marginTop: '14px',
-            color: '#ffffff',
-            textDecoration: 'none',
-            fontSize: '14px',
-            fontWeight: '500'
-          }}
-        >
-          🔗 View Source Code on GitHub
-        </a>
+          <button
+            onClick={() => username.trim() && setJoined(true)}
+            style={{
+              width: '100%',
+              padding: '11px',
+              borderRadius: '10px',
+              border: 'none',
+              backgroundColor: '#6366f1',
+              color: '#fff',
+              fontSize: '14px',
+              fontWeight: '600',
+              cursor: 'pointer',
+              marginBottom: '16px'
+            }}
+          >
+            Join Chat →
+          </button>
 
+          
+            <a href="https://github.com/thanujaa9/Real-Time-chat-application"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{
+              color: '#98b3da',
+              fontSize: '12px',
+              textDecoration: 'none',
+            }}
+          >
+            🔗 View Github Repo
+          </a>
+        </div>
       </div>
     );
   }

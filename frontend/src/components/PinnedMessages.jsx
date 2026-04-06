@@ -2,8 +2,10 @@ export default function PinnedMessages({ messages }) {
   if (messages.length === 0) return null;
   return (
     <div style={{
-      backgroundColor: '#fff', borderBottom: '1px solid #e2e8f0',
-      padding: '8px 20px', borderLeft: '4px solid #6366f1'
+      backgroundColor: '#eef2ff',
+      borderBottom: '1px solid #e0e7ff',
+      borderLeft: '4px solid #6366f1',
+      padding: '8px 20px',
     }}>
       <div style={{ fontSize: '11px', fontWeight: '600', color: '#6366f1', marginBottom: '3px' }}>
         📌 PINNED

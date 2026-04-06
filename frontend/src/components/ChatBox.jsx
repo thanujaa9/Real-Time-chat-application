@@ -3,7 +3,7 @@ import { io } from 'socket.io-client';
 import MessageItem from './MessageItem';
 import PinnedMessages from './PinnedMessages';
 
-const API = import.meta.env.VITE_API_URL || 'http://localhost:5555';
+const API = import.meta.env.VITE_API_URL || 'http://localhost:8000';
 const socket = io(API);
 
 export default function ChatBox({ username }) {
@@ -56,28 +56,31 @@ export default function ChatBox({ username }) {
   const pinned = messages.filter(m => m.pinned);
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', backgroundColor: '#f1f5f9', fontFamily: "'Segoe UI', sans-serif" }}>
+    <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', backgroundColor: '#f8fafc', fontFamily: "'Segoe UI', sans-serif" }}>
+
+      {/* Header - matches login card color */}
       <div style={{
-        backgroundColor: '#6366f1', padding: '12px 20px',
-        display: 'flex', alignItems: 'center', gap: '12px', color: '#fff',
-        boxShadow: '0 2px 8px rgba(99,102,241,0.3)'
+        backgroundColor: '#2b2c35',
+        padding: '12px 20px',
+        display: 'flex', alignItems: 'center', gap: '12px',
       }}>
         <div style={{
           width: '40px', height: '40px', borderRadius: '50%',
-          backgroundColor: '#818cf8', display: 'flex',
+          backgroundColor: '#6366f1', display: 'flex',
           alignItems: 'center', justifyContent: 'center',
-          fontWeight: '700', fontSize: '16px'
+          fontWeight: '700', fontSize: '16px', color: '#fff'
         }}>
           {username[0].toUpperCase()}
         </div>
         <div>
-          <div style={{ fontWeight: '600', fontSize: '15px' }}>{username}</div>
-          <div style={{ fontSize: '12px', color: '#c7d2fe' }}>● online</div>
+          <div style={{ fontWeight: '600', fontSize: '15px', color: '#f1f5f9' }}>{username}</div>
+          <div style={{ fontSize: '12px', color: '#818cf8' }}>● online</div>
         </div>
       </div>
 
       <PinnedMessages messages={pinned} />
 
+      {/* Messages - light bg */}
       <div style={{ flex: 1, overflowY: 'auto', padding: '16px 20px', display: 'flex', flexDirection: 'column' }}>
         {messages.length === 0 && (
           <div style={{ textAlign: 'center', color: '#94a3b8', marginTop: '60px', fontSize: '14px' }}>
@@ -96,6 +99,7 @@ export default function ChatBox({ username }) {
         <div ref={bottomRef} />
       </div>
 
+      {/* Input */}
       <div style={{
         backgroundColor: '#fff', padding: '12px 16px',
         display: 'flex', gap: '10px', alignItems: 'center',
