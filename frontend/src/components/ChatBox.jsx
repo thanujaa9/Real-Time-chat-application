@@ -58,7 +58,6 @@ export default function ChatBox({ username }) {
   return (
     <div style={{ display: 'flex', flexDirection: 'column', height: '100vh', backgroundColor: '#f8fafc', fontFamily: "'Segoe UI', sans-serif" }}>
 
-      {/* Header - matches login card color */}
       <div style={{
         backgroundColor: '#2b2c35',
         padding: '12px 20px',
@@ -80,7 +79,6 @@ export default function ChatBox({ username }) {
 
       <PinnedMessages messages={pinned} />
 
-      {/* Messages - light bg */}
       <div style={{ flex: 1, overflowY: 'auto', padding: '16px 20px', display: 'flex', flexDirection: 'column' }}>
         {messages.length === 0 && (
           <div style={{ textAlign: 'center', color: '#94a3b8', marginTop: '60px', fontSize: '14px' }}>
@@ -99,7 +97,6 @@ export default function ChatBox({ username }) {
         <div ref={bottomRef} />
       </div>
 
-      {/* Input */}
       <div style={{
         backgroundColor: '#fff', padding: '12px 16px',
         display: 'flex', gap: '10px', alignItems: 'center',

@@ -19,7 +19,6 @@ export default function MessageItem({ message, currentUser, onDelete, onPin }) {
         position: 'relative',
       }}
     >
-      {/* Hover buttons ABOVE — same outer div so mouse stays in zone */}
       {showOptions && (
         <div style={{
           display: 'flex',
@@ -47,7 +46,6 @@ export default function MessageItem({ message, currentUser, onDelete, onPin }) {
         </div>
       )}
 
-      {/* Bubble */}
       <div style={{
         padding: '9px 14px',
         borderRadius: isOwner ? '18px 18px 4px 18px' : '18px 18px 18px 4px',
